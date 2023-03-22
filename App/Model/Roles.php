@@ -1,22 +1,20 @@
 <?php
-
     namespace App\Model;
     use App\Utils\BddConnect;
     class Roles extends BddConnect{
-        // attributs
-
+        /*-----------------------
+                Attributs
+        ------------------------*/
         private $id_roles;
         private $nom_roles;
-
-        // constructeur
-
-        public function __construct($name){
-            $this->id_roles=1;
-            $this->nom_roles=$name;
+        /*-----------------------
+                Constructeur
+        ------------------------*/
+        public function __construct(){
         }
-        
-        // getter et setter
-            
+        /*-----------------------
+            Getter et Setters
+        ------------------------*/
         public function getIdRoles():?int{
             return $this->id_roles;
         }
@@ -26,9 +24,17 @@
         public function setNomRoles($name):void{
             $this->nom_roles = $name;
         }
-
-        // methodes
-
+        // ----méthodes------
+        public function addRoles():void{
+            try{
+            $nom_roles=$this->nom_roles;
+            $req = $this->connexion()->prepare('INSERT INTO roles(nom_roles) VALUES(?)');
+                $req->bindParam(1, $nom_roles, \PDO::PARAM_STR);
+                $req->execute();
+            } 
+            catch (\Exception $e) {
+                die('Erreur : '.$e->getMessage());
+            }
+        }
     }
-
 ?>
