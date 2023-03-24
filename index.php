@@ -42,6 +42,8 @@
         case '/chocoblast/chocoblastAdd':
             $chocoblastController->insertChocoblast();
             break;
+        case '/chocoblast/chocoblastAll':
+            $cho
         case '/chocoblast/connexion':
             $userController->connexionUser();
             break;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Public/Style/main.css">
     <script src="./Public/Script/script.js" defer></script>
-    <title>Add Chocoblast</title>
+    <title>Afficher Chocoblast</title>
 </head>
 <body>
     <!-- Import du menu -->
@@ -20,8 +20,14 @@
             <select name="cible_chocoblast">
                 <!-- générer la liste des utilisateurs en PHP -->
                 <?php
-                    foreach($data as $value){
-                        echo '<option value='.$value->id_utilisateur.'>'.$value->nom_utilisateur.'</option>';
+                    foreach($chocos as $value){
+                        echo '<div class="choco">
+                        <h3>'.$value->slogan_chocoblast.'</h3>
+                        <p>'.$value->slogan_chocoblast.'</p>
+                        <h3>'.$value->slogan_chocoblast.'</h3>
+                        <h3>'.$value->slogan_chocoblast.'</h3>
+                        <p>'.$value->prenom_cible.'</p>
+                        </div>';
                     }
                 ?>
             </select>

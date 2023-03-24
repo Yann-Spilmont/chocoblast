@@ -40,7 +40,7 @@
                         // var_dump($this);
                         // echo '</pre>';
                         $this->addChocoblast();
-                        $msg='Le chocoblast : '.$slogan.'a été ajouté en Bdd';
+                        $msg='Le chocoblast : '.$slogan.' a été ajouté en Bdd';
                         
                     }
                     // test sinon les champs sont vides
@@ -49,6 +49,15 @@
             // importer la vue chocoblast
 
             include './App/Vue/viewAddChocoblast.php';
+        }
+        public function showChocoblastAll():void{
+            // Variables pour les messages
+            $msg="";
+            $chocos = $this->getAllChocoblast();
+            if(!chocos){
+                $msg = "Il n'y a aucun chocoblast dans la bdd";
+            }
+            include './App/Vue/showAddChocoblast.php';
         }
        
     }
