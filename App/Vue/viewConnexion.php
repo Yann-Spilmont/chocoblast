@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Public/Style/main.css">
     <script src="./Public/Script/script.js" defer></script>
-    <title>Document</title>
+    <title>Connexion</title>
 </head>
 <body>
      <!--import du menu -->
      <?php include './App/Vue/viewMenu.php';?>
-     <div class="form">
+     
+     <section class="formContainer">
+     <h3>Connexion :</h3>
         <form action="" method="post">
             <label for="mail_utilisateur">Saisir votre mail :</label>
             <input type="email" name="mail_utilisateur">
@@ -18,8 +20,14 @@
             <input type="password" name="password_utilisateur">
             <input type="submit" value="Connexion" name="submit">
         </form>
-        <div id="error"><?php echo $msg; ?></div>
-        <div id="valide"><?php echo $valide; ?></div>
-     </div>
+    </section>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p><?= $msg ?></p>
+        </div>
+    </div>
 </body>
 </html>

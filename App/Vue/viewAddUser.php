@@ -10,9 +10,9 @@
 <body>
     <!--import du menu -->
     <?php include './App/Vue/viewMenu.php';?>
-    <div class="form">
+    <section class="formContainer">
         <h3>Ajouter un compte utilisateur :</h3>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <label for="nom_utilisateur">saisir votre nom :</label>
             <input type="text" name="nom_utilisateur">
             <label for="prenom_utilisateur">saisir votre prénom :</label>
@@ -21,9 +21,18 @@
             <input type="email" name="mail_utilisateur">
             <label for="password_utilisateur">saisir votre mot de passe :</label>
             <input type="password" name="password_utilisateur">
+            <label for="image_utilisateur">Ajouter une image :</label>
+            <input type="file" name="image_utilisateur">
             <input type="submit" value="Ajouter" name="submit">
         </form>
-        <div id="error"><?php echo $msg; ?></div>
+    </section>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p><?= $msg ?></p>
+        </div>
     </div>
 </body>
 </html>

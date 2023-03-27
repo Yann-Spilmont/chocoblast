@@ -11,14 +11,14 @@
     <!-- Import du menu -->
     <?php include './App/Vue/viewMenu.php'; ?>
     <section class="formContainer">
-        <h3>Ajouter un chocoblast :</h3>
+        <h3>Ajouter un commentaire :</h3>
         <form action="" method="post">
-            <label for="slogan_chocoblast">Saisir votre slogan :</label>
-            <input type="text" name="slogan_chocoblast">
+            <label for="note_chocoblast">Saisir une note:</label>
+            <input type="text" name="note_chocoblast">
+            <label for="text_chocoblast">Saisir le texte:</label>
+            <input type="text" name="text_chocoblast">
             <label for="date_chocoblast">Saisir la date :</label>
             <input type="date" name="date_chocoblast">
-            <label for="cible_chocoblast">Choisir votre cible :</label>
-            <select name="cible_chocoblast">
                 <!-- générer la liste des utilisateurs en PHP -->
                 <?php
                     foreach($data as $value){
